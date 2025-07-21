@@ -1,0 +1,25 @@
+﻿<Page x:Class="WpfApp5.Pages.Game"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp5.Pages"
+      mc:Ignorable="d" 
+      Loaded="GameSettings_Loaded"
+      Title="Game Settings" Height="645" Width="850">
+
+    <Grid x:Name="GameGrid">
+        <Border x:Name="EORBorder" Background="Gray" Opacity="0.2" CornerRadius="10" Margin="30,40,380,545"/>
+        <Border x:Name="EORBorder_Copy" Background="Gray" Opacity="0.2" CornerRadius="10" Margin="30,110,380,475"/>
+        <ui:TextBlock Text="Edit On Release" Foreground="White" FontFamily="Segoe UI SemiBold" FontSize="20" Margin="80,118,625,500"/>
+        <ui:TextBlock Text="Edit faster by enabling Edit On Relase!!!" Foreground="White" FontFamily="Segoe UI" Opacity="0.4" FontSize="10" Margin="80,140,588,478"/>
+        <ui:SymbolIcon Foreground="White" FontSize="30" Symbol="Map20" Margin="41,126,780,495"/>
+        <ui:SymbolIcon Foreground="White" FontSize="30" Symbol="CircleEdit24" Margin="36,53,775,560"/>
+        <ui:ToggleSwitch x:Name="EORSwitch" Content="" Margin="0,130,0,0" VerticalAlignment="Top" Unchecked="EOR_Unchecked" Checked="EOR_Checked" HorizontalAlignment="Center"/>
+        <ui:TextBlock Text="Disable Pre Edits" Foreground="White" FontFamily="Segoe UI SemiBold" FontSize="20" Margin="80,48,611,569"/>
+        <ui:TextBlock Text="idk what to put here" Foreground="White" FontFamily="Segoe UI" Opacity="0.4" FontSize="10" Margin="80,73,588,545"/>
+        <ui:TextBlock Text="you gotta add these yourself if you want them" Foreground="White" FontFamily="Segoe UI" Opacity="1" FontSize="30" Margin="41,195,178,411"/>
+        <ui:ToggleSwitch x:Name="DPESwitch" Content="" Margin="0,60,0,0" VerticalAlignment="Top" Unchecked="DPE_Unchecked" Checked="DPE_Checked" HorizontalAlignment="Center"/>
+    </Grid>
+</Page>

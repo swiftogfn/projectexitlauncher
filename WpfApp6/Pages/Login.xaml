@@ -1,0 +1,50 @@
+﻿<Page x:Class="WpfApp5.Pages.Login"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp5.Pages"
+      mc:Ignorable="d" 
+      Title="Login" Height="710" Width="1160">
+
+
+    <Grid Margin="0,-2,0,2" >
+        <ui:TextBlock x:Name="TextBlock" Text="Exit    " FontFamily="Segoe UI Bold" HorizontalAlignment="Center" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Top" Margin="0,181,0,0" FontSize="40" FontWeight="Bold" Foreground="White" Width="70" Height="62"/>
+        <ui:TextBlock x:Name="boomboombow" Text="Login using your Email and Password" Opacity="0.4" FontFamily="Segoe UI SemiBold" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Foreground="White" Width="336" Height="28" Margin="0,239,0,0"/>
+        <ui:Button MouseOverBorderBrush="Blue" MouseOverBackground="#FF007CEF" x:Name="LoginButton" Content="Login" Background="#FF007CEF" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Foreground="White" Width="540" Height="32" Margin="0,438,0,0" Click="Login_Click" HorizontalAlignment="Center"/>
+        <ui:PasswordBox x:Name="Password" PlaceholderText="Password" VerticalAlignment="Top" Height="42" Margin="310,350,310,0" FontSize="15" FontFamily="Segoe UI Bold" Foreground="White" BorderBrush="Transparent" TextChanged="Password_TextChanged" />
+        <ui:TextBox x:Name="Email" PlaceholderText="Email" VerticalAlignment="Top" Height="40" Margin="310,293,310,0" FontSize="15" FontFamily="Segoe UI Bold" Foreground="White" BorderBrush="Transparent" TextChanged="Email_TextChanged" />
+        <ui:SymbolIcon x:Name="LoginIcon" Foreground="White" FontSize="30" Symbol="ArrowRight28" Margin="430,460,694,192" RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
+            <ui:SymbolIcon.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ui:SymbolIcon.RenderTransform>
+        </ui:SymbolIcon>
+
+
+
+        <Grid x:Name="ErrorGrid" Visibility="Hidden">
+            <ui:Button MouseOverBorderBrush="Blue" MouseOverBackground="IndianRed" x:Name="ErrorButton" Content="Launcher Offline" Background="IndianRed" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Foreground="White" Width="540" Height="33" Margin="0,642,0,0" IsHitTestVisible="False"/>
+            <ui:SymbolIcon x:Name="ErrorloginIcon" Foreground="White" FontSize="30" Symbol="ErrorCircle16" Margin="310,641,815,35"/>
+        </Grid>
+
+        <Grid x:Name="SuccessGrid" Visibility="Hidden">
+            <ui:Button MouseOverBorderBrush="Blue" MouseOverBackground="Green" x:Name="Success" Content="Login Successful!" Background="Green" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Foreground="White" Width="540" Height="33" Margin="0,642,0,0" IsHitTestVisible="False"/>
+            <ui:SymbolIcon x:Name="d" Foreground="White" FontSize="30"  Margin="310,641,815,35" Symbol="Checkmark12"/>
+        </Grid>
+
+        <Grid x:Name="LoadingGrid" Visibility="Hidden">
+            <Frame x:Name="LoadingFrameLogin" Background="Black" Opacity="0.5"/>
+            <ui:LoadingScreen Background="Transparent" x:Name="LoadingLoginPage" Margin="540,303,500,285"/>
+        </Grid>
+        <CheckBox x:Name="AutoLoginSwitch" Content="Remember Me" Margin="310,400,0,0" VerticalAlignment="Top" Height="15" Unchecked="ToggleSwitch_Unchecked" Checked="ToggleSwitch_Checked" IsChecked="True"/>
+        <ui:TextBlock TextWrapping="Wrap" Text="Email Address" Margin="310,276,603,417" Foreground="#FFDAD5D5"/>
+        <ui:TextBlock TextWrapping="Wrap" Text="Password" Margin="310,333,603,360" Foreground="#FFDAD5D5"/>
+    </Grid>
+</Page>
+

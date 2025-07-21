@@ -1,0 +1,60 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp5.Pages"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml" x:Class="WpfApp5.Pages.Servers"
+      mc:Ignorable="d"
+      Title="Servers" Height="710" Width="1090">
+
+    <Grid>
+        <!-- Your other UI elements like Borders, TextBlocks, ToggleSwitches etc. -->
+
+        <Border CornerRadius="3,3,3,3" Padding="20" Margin="60,97,60,537" Background="#FF003B71"/>
+
+        <!-- Your other UI elements like Borders, TextBlocks, ToggleSwitches etc. -->
+
+        <TextBlock Text="Services" FontSize="16" FontWeight="Bold" Foreground="White" Margin="60,75,0,614" HorizontalAlignment="Left"/>
+        <TextBlock Text="Backend" FontSize="16" FontWeight="Bold" Foreground="White" Margin="84,118,0,566" HorizontalAlignment="Left"/>
+        <Ellipse x:Name="ErrorloginIcon" Fill="LimeGreen" Margin="985,127,89,567" RenderTransformOrigin="0.5,0.5" Width="16" Height="16">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1" ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+
+        <TextBlock Text="Is the backend online and running." Foreground="#AAAAAA" HorizontalAlignment="Left" Margin="84,138,0,552"/>
+        <Border CornerRadius="3,3,3,3" Padding="20" Margin="60,176,60,458" Background="#FF003B71"/>
+        <TextBlock Text="Launcher" FontSize="16" FontWeight="Bold" Foreground="White" Margin="84,197,0,487" HorizontalAlignment="Left"/>
+        <Ellipse x:Name="ErrorloginIcon_Copy" Fill="LimeGreen" Margin="985,206,89,488" RenderTransformOrigin="0.5,0.5" Width="16" Height="16">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1" ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <TextBlock Text="Is the launcher online and running." Foreground="#AAAAAA" HorizontalAlignment="Left" Margin="84,217,0,473"/>
+        <Border CornerRadius="3,3,3,3" Padding="20" Margin="60,255,60,379" OpacityMask="#FF003B71" Background="#FF003B71"/>
+        <TextBlock Text="Servers" FontSize="16" FontWeight="Bold" Foreground="White" Margin="84,276,0,408" HorizontalAlignment="Left"/>
+        <Ellipse x:Name="ErrorloginIcon_Copy1" Fill="LimeGreen" Margin="985,285,89,409" RenderTransformOrigin="0.5,0.5" Width="16" Height="16">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1" ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <TextBlock Text="Are the servers online and running." Foreground="#AAAAAA" HorizontalAlignment="Left" Margin="84,296,0,394"/>
+
+    </Grid>
+</Page>

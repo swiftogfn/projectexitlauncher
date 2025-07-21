@@ -1,0 +1,108 @@
+﻿<Page x:Class="WpfApp5.Pages.Shop"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      Title="Shop" Height="710" Width="1090">
+
+    <Page.Resources>
+        <Style x:Key="ShopItemContainerStyle" TargetType="ListViewItem">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListViewItem">
+                        <Border x:Name="Border" 
+                                Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Border" Property="BorderBrush" Value="Yellow"/>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="Border" Property="BorderBrush" Value="Yellow"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="150"/>
+        </Grid.RowDefinitions>
+
+        <!-- Featured Items -->
+        <TextBlock x:Name="featuretext" Text="Featured Items" FontWeight="Bold" FontSize="16" Margin="0,20,0,0" Grid.Row="0" Foreground="White" Visibility="Collapsed" />
+        <ListView x:Name="FeaturedListView"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                  ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                  HorizontalContentAlignment="Center" Margin="0,41,0,0"
+                  Background="Transparent"
+                  BorderBrush="{x:Null}"
+                  ItemContainerStyle="{StaticResource ShopItemContainerStyle}" Grid.RowSpan="2">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Width="128" HorizontalAlignment="Center" Margin="5">
+                        <Image Source="{Binding ImageUrl}" Width="128" Height="128"/>
+                        <TextBlock Text="{Binding DisplayName}" TextAlignment="Center" FontSize="14" 
+                                   TextWrapping="Wrap" Foreground="White" Margin="0,5,0,0"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,2,0,0">
+                            <Image Source="https://fortnite-api.com/images/vbuck.png" Width="20" Height="20" Margin="0,0,4,0"/>
+                            <TextBlock Text="{Binding Price}" FontSize="14" Foreground="White" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!-- Daily Items -->
+        <TextBlock x:Name="dailytetx" Text="Daily Items" FontWeight="Bold" FontSize="16" Margin="0,14,0,156" Grid.Row="2" Foreground="White" Grid.RowSpan="2" Visibility="Collapsed"  />
+        <ListView x:Name="DailyListView"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                  ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                  HorizontalContentAlignment="Center"
+                  Background="Transparent"
+                  BorderBrush="{x:Null}"
+                  ItemContainerStyle="{StaticResource ShopItemContainerStyle}" Grid.Row="3" Margin="0,36,0,-257">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Width="128" HorizontalAlignment="Center" Margin="5">
+                        <Image Source="{Binding ImageUrl}" Width="128" Height="128"/>
+                        <TextBlock Text="{Binding DisplayName}" TextAlignment="Center" FontSize="14" 
+                                   TextWrapping="Wrap" Foreground="White" Margin="0,5,0,0"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,2,0,0">
+                            <Image Source="https://fortnite-api.com/images/vbuck.png" Width="20" Height="20" Margin="0,0,4,0"/>
+                            <TextBlock Text="{Binding Price}" FontSize="14" Foreground="White" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <TextBlock x:Name="loadingtext" Text="Loading" FontWeight="Bold" FontSize="48" Margin="400,131,491,39" Grid.Row="2" Foreground="White" Grid.RowSpan="2" />
+    </Grid>
+</Page>

@@ -1,0 +1,75 @@
+﻿<Page x:Class="WpfApp5.Pages.Navigation"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:WpfApp5.Pages"
+      mc:Ignorable="d"
+      Title="Navigation" Height="710" Width="1160">
+
+    <Grid>
+        <ui:NavigationView PaneDisplayMode="LeftFluent">
+            <ui:NavigationView.Background>
+                <ImageBrush ImageSource="/Pages/Exit Color Code.png"/>
+            </ui:NavigationView.Background>
+
+            <ui:NavigationView.MenuItems>
+                <ui:NavigationViewItem Margin="0,60,0,0" Content="Play" Tag="Home" IsActive="True" x:Name="HomeNav" Click="NavigationViewItem_Click_2">
+                    <ui:NavigationViewItem.Icon>
+                        <ui:SymbolIcon Symbol="Play12"/>
+                    </ui:NavigationViewItem.Icon>
+                </ui:NavigationViewItem>
+
+                <ui:NavigationViewItem Tag="Library" Content="Library" x:Name="LibraryNav" Click="NavigationViewItem_Click_1">
+                    <ui:NavigationViewItem.Icon>
+                        <ui:SymbolIcon Symbol="ArrowDownload16"/>
+                    </ui:NavigationViewItem.Icon>
+                </ui:NavigationViewItem>
+
+
+                <ui:NavigationViewItem Tag="ServerStatus" Content="Shop" x:Name="ShopNav" Click="NavigationViewItem_Click_Shop" Foreground="Black" VerticalAlignment="Top">
+                    <ui:NavigationViewItem.Icon>
+                        <ui:SymbolIcon Symbol="Cart16"/>
+                    </ui:NavigationViewItem.Icon>
+                </ui:NavigationViewItem>
+
+                <!-- New Server Status Button -->
+                <ui:NavigationViewItem Tag="ServerStatus" Content="Servers" x:Name="ServerStatusNav" Click="NavigationViewItem_Click_ServerStatus" Foreground="Black">
+                    <ui:NavigationViewItem.Icon>
+                        <ui:SymbolIcon Symbol="Wifi120"/>
+                    </ui:NavigationViewItem.Icon>
+                </ui:NavigationViewItem>
+
+                <ui:NavigationViewItem Tag="ManageStatus" Content="Manage" x:Name="ManageNav" Click="NavigationViewItem_Click_Exit" Foreground="Black" Visibility="Hidden">
+                    <ui:NavigationViewItem.Icon>
+                        <ui:SymbolIcon Symbol="Color16"/>
+                    </ui:NavigationViewItem.Icon>
+                </ui:NavigationViewItem>
+
+                <ui:NavigationViewItem Tag="ExitStatus" Content="Exit +" x:Name="ExitNav" Click="NavigationViewItem_Click_Exit" Foreground="Black" Visibility="Hidden">
+                    <ui:NavigationViewItem.Icon>
+                        <ui:SymbolIcon Symbol="Color16"/>
+                    </ui:NavigationViewItem.Icon>
+                </ui:NavigationViewItem>
+
+                <ui:NavigationViewItem Margin="0,220,0,0" Content="Settings" x:Name="SettingsNav" Tag="Settings" Click="NavigationViewItem_Click_3" VerticalAlignment="Top">
+                    <ui:NavigationViewItem.Icon>
+                        <ui:SymbolIcon Symbol="Settings20"/>
+                    </ui:NavigationViewItem.Icon>
+                </ui:NavigationViewItem>
+            </ui:NavigationView.MenuItems>
+        </ui:NavigationView>
+
+        <Frame x:Name="LoadingFrame" Background="Black" Opacity="0.2" Visibility="Hidden"/>
+        <Frame x:Name="NavigationFrame" Navigated="NavigationFrame_Navigated" HorizontalAlignment="Left" Width="1090" Margin="68,0,0,0" Background="#FF002C73"/>
+
+        <!-- Optional: If this is intentional as a floating Shop button, give it a unique name -->
+        <!-- Or consider removing it if not needed -->
+        <!--<ui:NavigationViewItem Tag="Shop" Content="Shop" x:Name="ShopNav_Copy" Click="NavigationViewItem_Click_4" Foreground="Black" Margin="0,180,1100,0" VerticalAlignment="Top">
+            <ui:NavigationViewItem.Icon>
+                <ui:SymbolIcon Symbol="Cart16"/>
+            </ui:NavigationViewItem.Icon>
+        </ui:NavigationViewItem>-->
+    </Grid>
+</Page>
